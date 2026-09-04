@@ -90,6 +90,9 @@
       <Unit>
         <Filename Value="OSD.pas"/>
         <IsPartOfProject Value="True"/>
+        <ComponentName Value="OSDForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
       </Unit>
     </Units>
   </ProjectOptions>

@@ -21,7 +21,7 @@ type
     ScrollLockBox:TCheckBox;
     PollTimer:TTimer;
 
-    formOSD: TForm2;
+    formOSD: TOSDForm;
 
     procedure FormClose(Sender:TObject;var CloseAction:TCloseAction);
     procedure FormCreate(Sender:TObject);
@@ -82,7 +82,7 @@ end;
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
-  formOSD := TForm2.Create(self);
+  formOSD := TOSDForm.Create(self);
   formOSD.Show;
 end;
 

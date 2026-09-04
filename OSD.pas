@@ -9,9 +9,9 @@ uses
 
 type
 
-  { TForm2 }
+  { TOSDForm }
 
-  TForm2 = class(TForm)
+  TOSDForm = class(TForm)
     StateLabel: TLabel;
     StatePollTimer: TTimer;
     procedure FormCreate(Sender:TObject);
@@ -37,9 +37,9 @@ var
 
 {$R *.lfm}
 
-{ TForm2 }
+{ TOSDForm }
 
-procedure TForm2.StatePollTimerTimer(Sender:TObject);
+procedure TOSDForm.StatePollTimerTimer(Sender:TObject);
 begin
   if isFirstTime then begin
     { Don't show any notifications yet }
@@ -81,7 +81,7 @@ begin
   end;
 end;
 
-procedure TForm2.ShowBriefly;
+procedure TOSDForm.ShowBriefly;
 var
   mon: TMonitor;
   ExStyle: PtrInt;
@@ -112,7 +112,7 @@ begin
   disappearTick := IncSecond(now, 1);
 end;
 
-function TForm2.StateBoolStr(const value: boolean): string;
+function TOSDForm.StateBoolStr(const value: boolean): string;
 begin
   if value then
     result := 'ON'
@@ -120,12 +120,12 @@ begin
     result := 'OFF';
 end;
 
-procedure TForm2.FormCreate(Sender:TObject);
+procedure TOSDForm.FormCreate(Sender:TObject);
 begin
   isFirstTime := true;
 end;
 
-procedure TForm2.FormShow(Sender:TObject);
+procedure TOSDForm.FormShow(Sender:TObject);
 begin
   StatePollTimer.Enabled := true;
 end;
