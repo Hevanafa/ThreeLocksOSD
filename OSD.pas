@@ -82,9 +82,15 @@ begin
 end;
 
 procedure TForm2.ShowBriefly;
+var
+  mon: TMonitor;
 begin
   Visible := true;
   disappearTick := IncSecond(now, 1);
+
+  mon := Screen.MonitorFromWindow(self.handle, mdNearest);
+  left := mon.Left + (mon.width - self.width) div 2;
+  top := mon.Top + (mon.Height * 2 div 3);
 end;
 
 function TForm2.StateBoolStr(const value: boolean): string;
