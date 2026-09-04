@@ -19,6 +19,7 @@ type
     StatePollTimer: TTimer;
 
     procedure FormCreate(Sender:TObject);
+    procedure Paint; override;
     procedure FormShow(Sender:TObject);
     procedure StatePollTimerTimer(Sender:TObject);
 
@@ -158,6 +159,17 @@ end;
 procedure TOSDForm.FormCreate(Sender:TObject);
 begin
   isFirstTime := true;
+end;
+
+procedure TOSDForm.Paint;
+begin
+  inherited Paint;
+
+  Canvas.Pen.Color := RGBToColor($aa, $aa, $aa);
+  canvas.Pen.Width := 2;
+
+  canvas.brush.Style := bsClear;
+  canvas.Rectangle(0, 0, ClientWidth, ClientHeight);
 end;
 
 procedure TOSDForm.FormShow(Sender:TObject);
