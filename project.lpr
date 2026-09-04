@@ -5,7 +5,7 @@ program project;
 
 uses
   Interfaces, // this includes the LCL widgetset
-  Forms, Unit1;
+  Forms, Unit1, OSD;
 
 {$R *.res}
 
@@ -17,7 +17,8 @@ begin
   Application.MainFormOnTaskbar:=True;
   {$POP}
   Application.Initialize;
-  Application.CreateForm(TForm1,Form1);
+  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TForm2, Form2);
   Application.Run;
 end.
 

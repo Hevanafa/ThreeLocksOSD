@@ -1,0 +1,28 @@
+object Form2: TForm2
+  Left = 466
+  Height = 240
+  Top = 250
+  Width = 320
+  Caption = 'Form2'
+  ClientHeight = 240
+  ClientWidth = 320
+  LCLVersion = '4.6.0.0'
+  object StateLabel: TLabel
+    Left = 64
+    Height = 50
+    Top = 96
+    Width = 189
+    Caption = '(Status) ON'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -37
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+  end
+  object StatePollTimer: TTimer
+    Interval = 166
+    OnTimer = StatePollTimerTimer
+    Left = 4
+    Top = 4
+  end
+end

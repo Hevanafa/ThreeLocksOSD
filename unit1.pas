@@ -56,9 +56,13 @@ end;
 
 procedure TForm1.PollTimerTimer(Sender:TObject);
 begin
-  NumLockBox.Checked := IsNumLockOn;
-  CapsLockBox.Checked := IsCapsLockOn;
-  ScrollLockBox.Checked := IsScrollLockOn;
+  numLockState := IsNumLockOn;
+  capsLockState := IsCapsLockOn;
+  scrollLockState := IsScrollLockOn;
+
+  NumLockBox.Checked := numLockState;
+  CapsLockBox.Checked := capsLockState;
+  ScrollLockBox.Checked := scrollLockState;
 end;
 
 procedure TForm1.FormShow(Sender:TObject);

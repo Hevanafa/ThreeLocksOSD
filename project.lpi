@@ -87,6 +87,10 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="AppStates"/>
       </Unit>
+      <Unit>
+        <Filename Value="OSD.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

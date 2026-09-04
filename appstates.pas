@@ -5,6 +5,9 @@ unit AppStates;
 
 interface
 
+var
+  numLockState, capsLockState, scrollLockState: boolean;
+
 implementation
 
 end.
