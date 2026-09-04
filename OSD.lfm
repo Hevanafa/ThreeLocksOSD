@@ -8,6 +8,7 @@ object Form2: TForm2
   Caption = 'OSDForm'
   ClientHeight = 200
   ClientWidth = 320
+  ShowInTaskBar = stNever
   LCLVersion = '4.6.0.0'
   OnCreate = FormCreate
   OnShow = FormShow
