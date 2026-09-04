@@ -25,7 +25,7 @@ type
 
 implementation
 
-uses AppStates;
+uses AppStates, DateUtils;
 
 var
   lastNumLockState, lastCapsLockState, lastScrollLockState: boolean;
@@ -74,7 +74,7 @@ end;
 procedure TForm2.ShowBriefly;
 begin
   Visible := true;
-  disappearTick := Now + 1.0;
+  disappearTick := IncSecond(now, 1);
 end;
 
 procedure TForm2.FormCreate(Sender:TObject);
