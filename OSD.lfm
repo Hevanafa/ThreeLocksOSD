@@ -14,8 +14,8 @@ object OSDForm: TOSDForm
   OnShow = FormShow
   object StateLabel: TLabel
     Left = 20
-    Height = 50
-    Top = 112
+    Height = 42
+    Top = 128
     Width = 280
     Alignment = taCenter
     AutoSize = False
@@ -31,7 +31,7 @@ object OSDForm: TOSDForm
   object Image1: TImage
     Left = 124
     Height = 72
-    Top = 16
+    Top = 32
     Width = 72
     ImageIndex = 1
     Images = ImageList1
