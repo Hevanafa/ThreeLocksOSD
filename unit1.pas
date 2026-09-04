@@ -37,14 +37,26 @@ uses Windows;
 
 { TForm1 }
 
+function IsNumLockOn: boolean;
+begin
+  Result := (GetKeyState(VK_NUMLOCK) and 1) <> 0
+end;
+
 function IsCapsLockOn: boolean;
 begin
   Result := (GetKeyState(VK_CAPITAL) and 1) <> 0
 end;
 
+function IsScrollLockOn: boolean;
+begin
+  Result := (GetKeyState(VK_SCROLL) and 1) <> 0
+end;
+
 procedure TForm1.PollTimerTimer(Sender:TObject);
 begin
+  NumLockBox.Checked := IsNumLockOn;
   CapsLockBox.Checked := IsCapsLockOn;
+  ScrollLockBox.Checked := IsScrollLockOn;
 end;
 
 procedure TForm1.FormShow(Sender:TObject);
