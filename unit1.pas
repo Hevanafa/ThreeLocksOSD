@@ -22,11 +22,14 @@ type
     PollTimer:TTimer;
 
     formOSD: TOSDForm;
+    TrayIcon1:TTrayIcon;
 
     procedure FormClose(Sender:TObject;var CloseAction:TCloseAction);
     procedure FormCreate(Sender:TObject);
     procedure FormShow(Sender:TObject);
+    procedure FormWindowStateChange(Sender:TObject);
     procedure PollTimerTimer(Sender:TObject);
+    procedure TrayIcon1DblClick(Sender:TObject);
   private
 
   public
@@ -70,9 +73,25 @@ begin
   ScrollLockBox.Checked := scrollLockState;
 end;
 
+procedure TForm1.TrayIcon1DblClick(Sender:TObject);
+begin
+  self.show;
+  WindowState := wsNormal;
+end;
+
 procedure TForm1.FormShow(Sender:TObject);
 begin
   PollTimer.Enabled := true;
+
+  TrayIcon1.Visible := true;
+  TrayIcon1.Icon := Application.Icon;
+  TrayIcon1.Hint := self.Caption;
+end;
+
+procedure TForm1.FormWindowStateChange(Sender:TObject);
+begin
+  if WindowState = wsMinimized then
+    self.hide;
 end;
 
 procedure TForm1.FormClose(Sender:TObject;var CloseAction:TCloseAction);
