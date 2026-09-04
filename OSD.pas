@@ -13,6 +13,8 @@ type
   { TOSDForm }
 
   TOSDForm = class(TForm)
+    Image1:TImage;
+    ImageList1:TImageList;
     StateLabel: TLabel;
     StatePollTimer: TTimer;
 
