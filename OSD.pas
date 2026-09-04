@@ -24,8 +24,9 @@ type
 
   private
     procedure ShowBriefly;
-    function StateBoolStr(const value: boolean): string;
 
+    function StateBoolStr(const value: boolean): string;
+    procedure SetStateLabelColour(const state: boolean);
   public
 
   end;
@@ -33,6 +34,13 @@ type
 implementation
 
 uses AppStates, DateUtils, Windows;
+
+type
+  TOSDIcon = (
+    OSDIconNumLock,
+    OSDIconCapsLock,
+    OSDIconScrollLock
+  );
 
 var
   lastNumLockState, lastCapsLockState, lastScrollLockState: boolean;
@@ -44,6 +52,14 @@ var
 {$R *.lfm}
 
 { TOSDForm }
+
+procedure TOSDForm.SetStateLabelColour(const state: boolean);
+begin
+  if state then
+    StateLabel.Font.Color := colourOn
+  else
+    StateLabel.Font.Color := colourOff;
+end;
 
 procedure TOSDForm.StatePollTimerTimer(Sender:TObject);
 begin
@@ -62,10 +78,7 @@ begin
   if lastNumLockState <> numLockState then begin
     lastNumLockState := numLockState;
 
-    if lastNumLockState then
-      StateLabel.Font.Color := colourOn
-    else
-      StateLabel.Font.Color := colourOff;
+    SetStateLabelColour(lastNumLockState);
 
     StateLabel.Caption := format(
       'Num Lock: %s', [StateBoolStr(lastNumLockState)]);
@@ -77,10 +90,7 @@ begin
   if lastCapsLockState <> capsLockState then begin
     lastCapsLockState := capsLockState;
 
-    if lastCapsLockState then
-      StateLabel.Font.Color := colourOn
-    else
-      StateLabel.Font.Color := colourOff;
+    SetStateLabelColour(lastCapsLockState);
 
     StateLabel.Caption := format(
       'Caps Lock: %s', [StateBoolStr(lastCapsLockState)]);
@@ -91,10 +101,7 @@ begin
   if lastScrollLockState <> scrollLockState then begin
     lastScrollLockState := scrollLockState;
 
-    if lastScrollLockState then
-      StateLabel.Font.Color := colourOn
-    else
-      StateLabel.Font.Color := colourOff;
+    SetStateLabelColour(lastScrollLockState);
 
     StateLabel.Caption := format(
       'Scroll Lock: %s', [StateBoolStr(lastScrollLockState)]);
