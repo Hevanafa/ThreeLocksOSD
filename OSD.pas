@@ -127,6 +127,9 @@ end;
 
 procedure TOSDForm.FormShow(Sender:TObject);
 begin
+  self.Color := RGBToColor($20, $20, $20);
+  StateLabel.Font.Color := RGBToColor($FF, $FF, $FF);
+
   StatePollTimer.Enabled := true;
 end;
 

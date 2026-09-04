@@ -24,6 +24,7 @@ object OSDForm: TOSDForm
     Font.Height = -37
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
+    ParentColor = False
     ParentFont = False
   end
   object StatePollTimer: TTimer
