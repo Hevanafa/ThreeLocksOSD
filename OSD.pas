@@ -28,7 +28,7 @@ type
 
 implementation
 
-uses AppStates, DateUtils;
+uses AppStates, DateUtils, Windows;
 
 var
   lastNumLockState, lastCapsLockState, lastScrollLockState: boolean;
@@ -86,12 +86,21 @@ var
   mon: TMonitor;
 begin
   Visible := true;
-  disappearTick := IncSecond(now, 1);
 
+  { Handle always on top }
+  SetWindowPos(
+    self.Handle,
+    HWND_TOPMOST,
+    0, 0, 0, 0,
+    SWP_NOMOVE or SWP_NOSIZE or SWP_NOACTIVATE);
+
+  { Handle positioning }
   { mon := Screen.MonitorFromWindow(self.handle, mdNearest); }
   mon := Screen.MonitorFromPoint(Mouse.CursorPos);
   left := mon.Left + (mon.width - self.width) div 2;
   top := mon.Top + (mon.Height * 2 div 3);
+
+  disappearTick := IncSecond(now, 1);
 end;
 
 function TForm2.StateBoolStr(const value: boolean): string;
