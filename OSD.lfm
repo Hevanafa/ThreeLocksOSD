@@ -1,21 +1,23 @@
 object Form2: TForm2
   Left = 466
-  Height = 240
+  Height = 200
   Top = 250
   Width = 320
   BorderIcons = []
   BorderStyle = bsNone
   Caption = 'OSDForm'
-  ClientHeight = 240
+  ClientHeight = 200
   ClientWidth = 320
   LCLVersion = '4.6.0.0'
   OnCreate = FormCreate
   OnShow = FormShow
   object StateLabel: TLabel
-    Left = 64
+    Left = 20
     Height = 50
-    Top = 96
-    Width = 189
+    Top = 100
+    Width = 280
+    Alignment = taCenter
+    AutoSize = False
     Caption = '(Status) ON'
     Font.CharSet = ANSI_CHARSET
     Font.Height = -37

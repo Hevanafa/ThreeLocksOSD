@@ -17,10 +17,13 @@ type
     procedure FormCreate(Sender:TObject);
     procedure FormShow(Sender:TObject);
     procedure StatePollTimerTimer(Sender:TObject);
+
   private
+    procedure ShowBriefly;
+    function StateBoolStr(const value: boolean): string;
 
   public
-    procedure ShowBriefly;
+
   end;
 
 implementation
@@ -50,24 +53,31 @@ begin
   if visible and (now >= disappearTick) then
     visible := false;
 
-  { TODO: Write the labels }
-
   if lastNumLockState <> numLockState then begin
     lastNumLockState := numLockState;
 
-    ShowBriefly;
+    StateLabel.Caption := format(
+      'Num Lock: %s', [StateBoolStr(lastNumLockState)]);
+
+    ShowBriefly
   end;
 
   if lastCapsLockState <> capsLockState then begin
     lastCapsLockState := capsLockState;
 
-    ShowBriefly;
+    StateLabel.Caption := format(
+      'Caps Lock: %s', [StateBoolStr(lastCapsLockState)]);
+
+    ShowBriefly
   end;
 
     if lastScrollLockState <> scrollLockState then begin
     lastScrollLockState := scrollLockState;
 
-    ShowBriefly;
+    StateLabel.Caption := format(
+      'Scroll Lock: %s', [StateBoolStr(lastScrollLockState)]);
+
+    ShowBriefly
   end;
 end;
 
@@ -75,6 +85,14 @@ procedure TForm2.ShowBriefly;
 begin
   Visible := true;
   disappearTick := IncSecond(now, 1);
+end;
+
+function TForm2.StateBoolStr(const value: boolean): string;
+begin
+  if value then
+    result := 'ON'
+  else
+    result := 'OFF';
 end;
 
 procedure TForm2.FormCreate(Sender:TObject);
