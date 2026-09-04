@@ -86,7 +86,7 @@ var
   mon: TMonitor;
   ExStyle: PtrInt;
 begin
-  Visible := true;
+  self.visible := true;
 
   { Handle always on top }
   SetWindowPos(
