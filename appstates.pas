@@ -1,11 +1,9 @@
 unit AppStates;
 
-{$mode ObjFPC}{$H+}
+{$Mode ObjFPC}
+{$H+}
 
 interface
-
-uses
-  Classes, SysUtils;
 
 implementation
 

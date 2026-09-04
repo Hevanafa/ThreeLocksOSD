@@ -1,4 +1,5 @@
 # Lazarus stuff
 lib/
 project.lps
-project.exe
+*.exe
+*.dbg
