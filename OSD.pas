@@ -1,11 +1,12 @@
 unit OSD;
 
-{$mode ObjFPC}{$H+}
+{$Mode ObjFPC}
+{$H+}
 
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ExtCtrls;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ExtCtrls, LCLType;
 
 type
 
@@ -14,6 +15,7 @@ type
   TOSDForm = class(TForm)
     StateLabel: TLabel;
     StatePollTimer: TTimer;
+
     procedure FormCreate(Sender:TObject);
     procedure FormShow(Sender:TObject);
     procedure StatePollTimerTimer(Sender:TObject);

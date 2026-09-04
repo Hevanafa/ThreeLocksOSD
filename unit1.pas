@@ -101,6 +101,8 @@ end;
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
+  { ShowWindow(Application.Handle, SW_HIDE); }
+
   formOSD := TOSDForm.Create(self);
   formOSD.Show;
   formOSD.Visible := false;

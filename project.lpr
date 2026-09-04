@@ -13,9 +13,10 @@ begin
   RequireDerivedFormResource:=True;
   Application.Title:='ThreeLocksOSD';
   Application.Scaled:=True;
-  {$PUSH}{$WARN 5044 OFF}
-  Application.MainFormOnTaskbar:=True;
-  {$POP}
+
+  Application.ShowMainForm := true;
+  Application.MainFormOnTaskbar := false;
+
   Application.Initialize;
   Application.CreateForm(TForm1, Form1);
   Application.Run;
