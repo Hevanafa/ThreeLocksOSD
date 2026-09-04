@@ -39,6 +39,8 @@ var
   isFirstTime: boolean;
   disappearTick: double;
 
+  colourOn, colourOff: TColor;
+
 {$R *.lfm}
 
 { TOSDForm }
@@ -60,14 +62,25 @@ begin
   if lastNumLockState <> numLockState then begin
     lastNumLockState := numLockState;
 
+    if lastNumLockState then
+      StateLabel.Font.Color := colourOn
+    else
+      StateLabel.Font.Color := colourOff;
+
     StateLabel.Caption := format(
       'Num Lock: %s', [StateBoolStr(lastNumLockState)]);
 
     ShowBriefly
   end;
 
+
   if lastCapsLockState <> capsLockState then begin
     lastCapsLockState := capsLockState;
+
+    if lastCapsLockState then
+      StateLabel.Font.Color := colourOn
+    else
+      StateLabel.Font.Color := colourOff;
 
     StateLabel.Caption := format(
       'Caps Lock: %s', [StateBoolStr(lastCapsLockState)]);
@@ -75,8 +88,13 @@ begin
     ShowBriefly
   end;
 
-    if lastScrollLockState <> scrollLockState then begin
+  if lastScrollLockState <> scrollLockState then begin
     lastScrollLockState := scrollLockState;
+
+    if lastScrollLockState then
+      StateLabel.Font.Color := colourOn
+    else
+      StateLabel.Font.Color := colourOff;
 
     StateLabel.Caption := format(
       'Scroll Lock: %s', [StateBoolStr(lastScrollLockState)]);
@@ -132,9 +150,12 @@ end;
 procedure TOSDForm.FormShow(Sender:TObject);
 begin
   self.Color := RGBToColor($20, $20, $20);
-  StateLabel.Font.Color := RGBToColor($FF, $FF, $FF);
+  { StateLabel.Font.Color := RGBToColor($FF, $FF, $FF); }
 
   StatePollTimer.Enabled := true;
+
+  colourOn := RGBToColor($55, $ff, $55);
+  colourOff := RGBToColor($aa, $aa, $aa);
 end;
 
 end.

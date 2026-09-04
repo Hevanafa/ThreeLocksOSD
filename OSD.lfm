@@ -21,6 +21,7 @@ object OSDForm: TOSDForm
     AutoSize = False
     Caption = '(Status) ON'
     Font.CharSet = ANSI_CHARSET
+    Font.Color = 8388863
     Font.Height = -27
     Font.Pitch = fpVariable
     Font.Quality = fqDraft

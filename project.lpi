@@ -15,6 +15,9 @@
         <TextDesc Value="An app to show lock key statuses without 200+ MB of bloat"/>
       </XPManifest>
       <Icon Value="0"/>
+      <Resources Count="1">
+        <Resource_0 FileName="skin\caps_lock.png" Type="RCDATA" ResourceName="CAPS_LOCK"/>
+      </Resources>
     </General>
     <VersionInfo>
       <UseVersionInfo Value="True"/>
