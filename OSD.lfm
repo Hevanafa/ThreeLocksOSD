@@ -3,7 +3,9 @@ object Form2: TForm2
   Height = 240
   Top = 250
   Width = 320
-  Caption = 'Form2'
+  BorderIcons = []
+  BorderStyle = bsNone
+  Caption = 'OSDForm'
   ClientHeight = 240
   ClientWidth = 320
   LCLVersion = '4.6.0.0'
