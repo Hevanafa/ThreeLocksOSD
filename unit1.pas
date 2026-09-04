@@ -15,6 +15,7 @@ type
   TForm1 = class(TForm)
     CapsLockBox:TCheckBox;
     Label1:TLabel;
+    Label2:TLabel;
     NumLockBox:TCheckBox;
     ScrollLockBox:TCheckBox;
     PollTimer:TTimer;

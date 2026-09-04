@@ -1,11 +1,13 @@
 object Form1: TForm1
   Left = 248
-  Height = 115
+  Height = 150
   Top = 250
-  Width = 320
-  Caption = 'Form1'
-  ClientHeight = 115
-  ClientWidth = 320
+  Width = 313
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
+  Caption = 'ThreeLocksOSD'
+  ClientHeight = 150
+  ClientWidth = 313
   LCLVersion = '4.6.0.0'
   OnShow = FormShow
   object NumLockBox: TCheckBox
@@ -40,6 +42,15 @@ object Form1: TForm1
     AutoSize = False
     Caption = 'These checkboxes are updated automatically depending on your keyboard''s lock states'
     WordWrap = True
+  end
+  object Label2: TLabel
+    Left = 32
+    Height = 23
+    Top = 120
+    Width = 259
+    Alignment = taRightJustify
+    AutoSize = False
+    Caption = 'By Hevanafa - Sep 2026'
   end
   object PollTimer: TTimer
     Interval = 166
