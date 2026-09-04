@@ -12,12 +12,14 @@
       <XPManifest>
         <DpiAware Value="True"/>
         <TextName Value="com.hevanafa.threelocksosd"/>
+        <TextDesc Value="An app to show lock key statuses without 200+ MB of bloat"/>
       </XPManifest>
       <Icon Value="0"/>
     </General>
     <VersionInfo>
       <UseVersionInfo Value="True"/>
       <MinorVersionNr Value="1"/>
+      <StringTable Comments="An app to show lock key statuses without 200+ MB of bloat" CompanyName="Hevanafa" LegalCopyright="2026, Hevanafa" ProductName="ThreeLocksOSD" ProductVersion="0.1"/>
     </VersionInfo>
     <BuildModes>
       <Item Name="Debug" Default="True"/>
