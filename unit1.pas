@@ -6,7 +6,8 @@ unit Unit1;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs,StdCtrls,ExtCtrls;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ExtCtrls,
+  OSD;
 
 type
 
@@ -19,7 +20,11 @@ type
     NumLockBox:TCheckBox;
     ScrollLockBox:TCheckBox;
     PollTimer:TTimer;
+
+    formOSD: TForm2;
+
     procedure FormClose(Sender:TObject;var CloseAction:TCloseAction);
+    procedure FormCreate(Sender:TObject);
     procedure FormShow(Sender:TObject);
     procedure PollTimerTimer(Sender:TObject);
   private
@@ -73,6 +78,12 @@ end;
 procedure TForm1.FormClose(Sender:TObject;var CloseAction:TCloseAction);
 begin
   Application.Terminate;
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+  formOSD := TForm2.Create(self);
+  formOSD.Show;
 end;
 
 end.

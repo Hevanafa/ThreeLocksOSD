@@ -10,6 +10,7 @@ object Form1: TForm1
   ClientWidth = 313
   LCLVersion = '4.6.0.0'
   OnClose = FormClose
+  OnCreate = FormCreate
   OnShow = FormShow
   object NumLockBox: TCheckBox
     Left = 32

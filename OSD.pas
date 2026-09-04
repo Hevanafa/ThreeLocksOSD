@@ -43,35 +43,37 @@ begin
     lastNumLockState := numLockState;
     lastCapsLockState := capsLockState;
     lastScrollLockState := scrollLockState;
+
+    isFirstTime := false;
   end;
 
   if visible and (now >= disappearTick) then
-    visible := false
+    visible := false;
 
   { TODO: Write the labels }
 
   if lastNumLockState <> numLockState then begin
     lastNumLockState := numLockState;
 
-    visible := true;
+    ShowBriefly;
   end;
 
   if lastCapsLockState <> capsLockState then begin
     lastCapsLockState := capsLockState;
 
-    visible := true;
+    ShowBriefly;
   end;
 
     if lastScrollLockState <> scrollLockState then begin
     lastScrollLockState := scrollLockState;
 
-    visible := true;
+    ShowBriefly;
   end;
 end;
 
 procedure TForm2.ShowBriefly;
 begin
-  self.Visible := true;
+  Visible := true;
   disappearTick := Now + 1.0;
 end;
 
