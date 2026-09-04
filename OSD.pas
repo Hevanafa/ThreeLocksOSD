@@ -78,6 +78,8 @@ begin
   if lastNumLockState <> numLockState then begin
     lastNumLockState := numLockState;
 
+    Image1.ImageIndex := ord(OSDIconNumLock);
+
     SetStateLabelColour(lastNumLockState);
 
     StateLabel.Caption := format(
@@ -90,6 +92,8 @@ begin
   if lastCapsLockState <> capsLockState then begin
     lastCapsLockState := capsLockState;
 
+    Image1.ImageIndex := ord(OSDIconCapsLock);
+
     SetStateLabelColour(lastCapsLockState);
 
     StateLabel.Caption := format(
@@ -100,6 +104,8 @@ begin
 
   if lastScrollLockState <> scrollLockState then begin
     lastScrollLockState := scrollLockState;
+
+    Image1.ImageIndex := ord(OSDIconScrollLock);
 
     SetStateLabelColour(lastScrollLockState);
 
