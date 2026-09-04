@@ -19,6 +19,7 @@ type
     NumLockBox:TCheckBox;
     ScrollLockBox:TCheckBox;
     PollTimer:TTimer;
+    procedure FormClose(Sender:TObject;var CloseAction:TCloseAction);
     procedure FormShow(Sender:TObject);
     procedure PollTimerTimer(Sender:TObject);
   private
@@ -34,7 +35,7 @@ implementation
 
 {$R *.lfm}
 
-uses Windows;
+uses Windows, AppStates;
 
 { TForm1 }
 
@@ -63,6 +64,11 @@ end;
 procedure TForm1.FormShow(Sender:TObject);
 begin
   PollTimer.Enabled := true;
+end;
+
+procedure TForm1.FormClose(Sender:TObject;var CloseAction:TCloseAction);
+begin
+  Application.Terminate;
 end;
 
 end.
