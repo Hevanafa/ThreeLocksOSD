@@ -84,6 +84,7 @@ procedure TForm1.FormCreate(Sender: TObject);
 begin
   formOSD := TOSDForm.Create(self);
   formOSD.Show;
+  formOSD.Visible := false;
 end;
 
 end.
