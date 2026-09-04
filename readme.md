@@ -8,7 +8,14 @@ Basically a tiny Windows on-screen display telling you whether the Num Lock, Cap
 
 ## Features
 
-(TBA)
+- Shows the status of Num Lock, Caps Lock, and Scroll Lock
+- Brief (1 second), semitransparent on-screen display (OSD) whenever a lock key changes
+- Automatically positions the OSD on the currently focused screen
+- Click-through and doesn't steal focus from other apps
+- Stays out of the taskbar and sits idly in the background
+- Can minimise to the system tray
+- Can automatically start with Windows
+- Small native executable with no additional runtime required
 
 ## Usage
 
