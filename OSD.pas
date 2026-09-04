@@ -84,6 +84,7 @@ end;
 procedure TForm2.ShowBriefly;
 var
   mon: TMonitor;
+  ExStyle: PtrInt;
 begin
   Visible := true;
 
@@ -99,6 +100,14 @@ begin
   mon := Screen.MonitorFromPoint(Mouse.CursorPos);
   left := mon.Left + (mon.width - self.width) div 2;
   top := mon.Top + (mon.Height * 2 div 3);
+
+  { Handle click-through & semitransparency }
+  ExStyle := GetWindowLongPtr(self.handle, GWL_EXSTYLE);
+
+  SetWindowLongPtr(self.handle, GWL_EXSTYLE,
+    ExStyle or WS_EX_LAYERED or WS_EX_TRANSPARENT);
+
+  SetLayeredWindowAttributes(self.Handle, 0, trunc(0.7 * 255), LWA_ALPHA);
 
   disappearTick := IncSecond(now, 1);
 end;
