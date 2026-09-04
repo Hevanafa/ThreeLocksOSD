@@ -11,6 +11,7 @@ uses
 
 begin
   RequireDerivedFormResource:=True;
+  Application.Title:='ThreeLocksOSD';
   Application.Scaled:=True;
   {$PUSH}{$WARN 5044 OFF}
   Application.MainFormOnTaskbar:=True;
